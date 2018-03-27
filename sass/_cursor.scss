@@ -1,0 +1,57 @@
+/*
+*  cursor
+*/
+
+// bug with cur and hotspot, needs more work
+/*
+$cursor-move: url(../img/big_cursor_move.cur), url(../img/big_cursor_move.gif), auto;
+$cursor-idle: url(../img/big_cursor_idle.cur), url(../img/big_cursor_idle.gif), auto;
+$cursor-pointer: url(../img/big_cursor_pointer.cur), url(../img/big_cursor_pointer.gif), pointer;
+$cursor-normal: url(../img/big_cursor.cur), url(../img/big_cursor.gif), auto;
+*/
+
+$cursor-move: url(../img/big_cursor_move.gif) 42 42, auto;
+$cursor-idle: url(../img/big_cursor_idle.gif), auto;
+$cursor-pointer: url(../img/big_cursor_pointer.gif) 16 0, pointer;
+$cursor-normal: url(../img/big_cursor.gif), auto;
+
+%cursor-move {
+  cursor: move;
+  cursor: $cursor-move;
+}
+
+.cursor-move {
+  @extend %cursor-move;
+}
+
+%cursor-idle {
+  cursor: wait;
+  cursor: $cursor-idle;
+}
+
+.cursor-idle {
+  @extend %cursor-idle;
+}
+
+%cursor-pointer {
+  cursor: pointer;
+  cursor: $cursor-pointer;
+}
+
+cursor-pointer {
+  @extend %cursor-pointer;
+}
+
+%cursor-normal {
+  cursor: auto;
+  cursor: $cursor-normal;
+}
+
+.cursor-normal {
+  @extend %cursor-normal;
+}
+
+body {
+  cursor: auto;
+  cursor: $cursor-normal;
+}

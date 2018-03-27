@@ -1,0 +1,90 @@
+/*
+*  Window Styles
+*/
+
+.ui-draggable-handle {
+  @extend %cursor-move;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#popup {
+  position: relative;
+}
+
+@keyframes window-open {
+    0%   {transform: scale(0.9);}
+    100% {transform: scale(1);}
+}
+
+.window { // would be nice to add a little animation when the window pops up
+  animation: window-open 0.2s ease-in;
+  border-radius: 5px;
+  position: relative;
+  border: 5px solid $white;
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  img {
+    border-top: 5px solid $white;
+  }
+
+  .window-top-bar {
+    display: flex;
+    flex-direction: row;
+    p, i {
+      font-size: 30px;
+      margin: 10px 10px 5px 10px;
+      line-height: 100%;
+    }
+  }
+
+  .window-title {
+    max-width: 80%;
+
+    p, i {
+      margin: 10px 10px 5px 10px
+    }
+  }
+
+  .window-top-bar-close {
+    min-width: 20%;
+    flex: 1;
+    float: left;
+
+    .window-top-bar-close-icon {
+      @extend %cursor-pointer;
+      height: 100%;
+      width: 2em;
+      float: right;
+      border-left: 5px solid white;
+      position: relative;
+
+      &:before, &:after {
+        content: "";
+        width: 30px;
+        border: 2px solid $white;
+        position: absolute;
+        top: 20px;
+        left: 7px;
+        border-radius: 2px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+img {
+  display: block;
+}

@@ -1,0 +1,27 @@
+/*
+*  Basic styles
+*/
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+}
+
+body {
+  background: $black;
+}
+
+.wrapper {
+  max-width: $screen-sm-max;
+  margin: 0 auto;
+  padding: $line-height-md-computed $line-height-sm-computed;
+  @media (max-width: $screen-xs-max) { // XS: 0 - 767
+    padding: $line-height-sm-computed $line-height-sm-computed;
+  }
+}
+
+.display-none{
+  display: none;
+}

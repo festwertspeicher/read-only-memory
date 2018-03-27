@@ -1,0 +1,111 @@
+/*
+*  Type
+*/
+
+// Variables
+// --------------------------------------------------
+$text-color: $white !default;
+$link-color: $yellow !default;
+$link-hover-color: $link-color !default;
+
+$font-family-base: "Overpass", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-size-base: 1.5rem !default; // wenn browserstandard 16px dann 1.5 * 16px = 24px
+$font-size-sm: ($font-size-base * 0.875) !default; // ~21px
+
+// baseline-grid
+$line-height-base: 1.5 !default; // defines our baseline grid. line-height: 150%
+$line-height-sm: ($line-height-base * 0.875) !default;
+$line-height-md: ($line-height-base * 1) !default;
+
+$line-height-sm-computed: ($font-size-base * $line-height-sm) !default; // 18px
+$line-height-md-computed: ($font-size-base * $line-height-md) !default; // 36px
+
+
+// Body text
+// -------------------------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-md-computed;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 0 $line-height-sm-computed 0;
+  @media (max-width: $screen-xs-max) { // XS: 0 - 767
+    font-size: $font-size-sm;
+    line-height: $line-height-sm-computed;
+  }
+}
+
+p {
+  margin: 0 0 $line-height-sm-computed 0;
+  hyphens: auto;
+}
+
+// Alignment
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+.text-nowrap { white-space: nowrap; }
+
+// Transformation
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+// Selection
+// -------------------------
+
+::selection {
+  color: $black;
+  background: $yellow;
+}
+::-moz-selection {
+  color: $black;
+  background: $yellow;
+}
+
+// Links
+// -------------------------
+
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a {
+  color: $text-color;
+  text-decoration: underline;
+
+  &:hover {
+    @extend %cursor-pointer;
+    text-decoration: $link-color;
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    text-decoration: inherit;
+    color: $link-hover-color;
+    @include tab-focus();
+  }
+}
+
+// Text overflow helper
+// -------------------------
+
+.text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
