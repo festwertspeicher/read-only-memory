@@ -185,8 +185,8 @@ var JS = (function () {
           ui.helper.css('margin-top', $(window).scrollTop() + 'px');
         }
       });
-      $("#" + giphyID).bind('mousedown',function(){ pub.bringFrontOnClick($(this), '.window'); });
-      $("#" + giphyID).find(".window-top-bar-close-icon").bind('mousedown',function(){ pub.closeWindow($(this)); });
+      $("#" + giphyID).bind('click',function(){ pub.bringFrontOnClick($(this), '.window'); });
+      $("#" + giphyID).find(".window-top-bar-close-icon").bind('click',function(){ pub.closeWindow($(this)); });
       giphyID++;
     });
 
