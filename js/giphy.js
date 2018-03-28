@@ -173,18 +173,13 @@ var JS = (function () {
       var name = pub.randomArrayValue(windowNames);
 
       // could make use of https://github.com/PolymerLabs/lit-html to implement html in js cleaner
-      $("<div class='window' id='" + giphyID + "' style='top: " + point.x + "px; left: " + point.y + "px; width: " + data.data.image_width + "px'><div class='window-top-bar'><div class='window-title'><p class='text-overflow-ellipsis'>" + name + "</p></div><div class='window-top-bar-close'><div class='window-top-bar-close-icon'></div></div></div><div class='window-content'><img src='" + data.data.image_url + "' width='" + data.data.image_width + "' height='" + data.data.image_height + "'></div></div>").appendTo("#popups");
+      $("<div class='window' id='" + giphyID + "' style='top: " + point.y + "px; left: " + point.x + "px; width: " + data.data.image_width + "px'><div class='window-top-bar'><div class='window-title'><p class='text-overflow-ellipsis'>" + name + "</p></div><div class='window-top-bar-close'><div class='window-top-bar-close-icon'></div></div></div><div class='window-content'><img src='" + data.data.image_url + "' width='" + data.data.image_width + "' height='" + data.data.image_height + "'></div></div>").appendTo("#popups");
 
       // easiest way to make windows draggable by using jquery-ui
       // but http://grantm.github.io/jquery-udraggable/ would be more lightweight and touchfriendly.
       $("#" + giphyID).draggable({
         stack: ".window",
         scroll: false,
-        drag: function(event, ui) {
-          var offset = $(this).offset();
-          var yPos = offset.top;
-          ui.helper.css('margin-top', $(window).scrollTop() + 'px');
-        }
       });
       $("#" + giphyID).bind('click',function(){ pub.bringFrontOnClick($(this), '.window'); });
       $("#" + giphyID).find(".window-top-bar-close-icon").bind('click',function(){ pub.closeWindow($(this)); });
