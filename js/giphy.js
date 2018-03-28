@@ -153,7 +153,8 @@ var JS = (function () {
   pub.randomPoint = function(popupWidth, popupHeight) {
     var point = {};
     point.x = Math.floor(Math.random() * (window.innerWidth - popupWidth));
-    point.y = Math.floor(Math.random() * (window.innerHeight - popupHeight));
+    point.y = Math.floor(Math.random() * ($(document).height() - popupHeight));
+    console.log(point)
     return point;
   }
 
