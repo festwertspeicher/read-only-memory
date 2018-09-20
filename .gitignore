@@ -1,4 +1,4 @@
-﻿.DS_Store
+.DS_Store
 .tmp
 .sass-cache/
 notes.md
@@ -6,3 +6,4 @@ node_modules/
 *.sublime-project
 *.sublime-workspace
 min/
+package-lock.json

@@ -1,22 +1,22 @@
 {
-  "name": "norman-bootstrap",
+  "name": "read-only-memory.com",
   "version": "0.0.1",
-  "description": "Normans Framework for creating Websites, spring 2017",
+  "description": "Normans Personal Website",
   "url": "https://github.com/festwertspeicher",
   "license": "(MIT)",
   "private": true,
-  "author": "Norman Heck <Norman.Heck@gmail.com> (https://festwertspeicher.io/)",
+  "author": "Norman Heck <hello-world@read-only-memory.com> (read-only-memory.com)",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.9.4",
     "gulp-concat": "^2.6.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.1.2",
-    "gulp-util": "^3.0.8"
+    "gulp-uglify": "^2.1.2"
   }
 }
