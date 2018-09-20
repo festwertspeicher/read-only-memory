@@ -13,11 +13,12 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  pointer-events: none;
 }
 
 #popups {
   position: relative;
-  height: 100%;
+  pointer-events: auto;
 }
 
 @keyframes window-open {
@@ -25,7 +26,7 @@
     100% {transform: scale(1);}
 }
 
-.window { // would be nice to add a little animation when the window pops up
+.window {
   animation: window-open 0.2s ease-in;
   border-radius: 5px;
   position: absolute;
